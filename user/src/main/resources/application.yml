@@ -2,7 +2,7 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:postgresql://localhost::5432/
+    url: jdbc:postgresql://localhost:5432/userdb
     username: embarkx
     password: embarkx
   jpa:

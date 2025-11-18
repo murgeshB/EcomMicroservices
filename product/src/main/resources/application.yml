@@ -2,7 +2,7 @@
    application:
     name: product-service
    datasource:
-     url: jdbc:postgresql://localhost::5432/
+     url: jdbc:postgresql://localhost:5432/product
      username: embarkx
      password: embarkx
    jpa:
