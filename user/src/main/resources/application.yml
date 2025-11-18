@@ -1,15 +1,16 @@
 spring:
   application:
     name: user-service
-  h2:
-    console:
-      enabled: true
   datasource:
-    url: jdbc:h2:mem:test
+    url: jdbc:postgresql://localhost::5432/
+    username: embarkx
+    password: embarkx
   jpa:
-    hibernate:
-      ddl-auto: create
     show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 server:
   port: 8082
