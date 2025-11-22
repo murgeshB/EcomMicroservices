@@ -35,7 +35,7 @@ public class UserController {
         return userService.fetchUserById(id).map(ResponseEntity::ok).orElseGet(()-> ResponseEntity.notFound().build());
     }
     @PutMapping ("{id}")
-    public ResponseEntity<String> updateUser(@PathVariable Long id,@RequestBody UserDTO user){
+    public ResponseEntity<String> updateUser(@PathVariable String id,@RequestBody UserDTO user){
         if(userService.updateUser(user,id) != null)
         return ResponseEntity.ok("User Updated Successfully");
         else

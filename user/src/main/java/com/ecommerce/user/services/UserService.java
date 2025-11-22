@@ -30,14 +30,14 @@ public class UserService {
 
     public Optional<UserDTO> fetchUserById(Long id) {
 
-        return userRepository.findById(id).map(user -> modelMapper.map(user, UserDTO.class));
+        return userRepository.findById(String.valueOf(id)).map(user -> modelMapper.map(user, UserDTO.class));
     }
     public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
+        return userRepository.findById(String.valueOf(id));
     }
 
-    public User updateUser(UserDTO user, Long id) {
+    public User updateUser(UserDTO user, String id) {
 
-        return userRepository.findById(id).map(u -> { u.setFirstName(user.getFirstName());u.setLastName(user.getLastName()); userRepository.save(u);return u;}).orElseGet(null);
+        return userRepository.findById(String.valueOf(id)).map(u -> { u.setFirstName(user.getFirstName());u.setLastName(user.getLastName()); userRepository.save(u);return u;}).orElseGet(null);
     }
 }
